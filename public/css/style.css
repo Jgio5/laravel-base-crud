@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* utility */
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+.btn {
+    padding: 2px 5px;
+    border-radius: 5px;
+    background-color: lightgray;
+    color:black;
+}
+
+/* header */
+header {
+    height: 190px;
+    border: 1px solid lightgray;
+}
+
+.top-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 30%;
+}
+
+header .nav {
+    width: 70%;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+header .nav li {
+    list-style: none;
+    display: inline;
+    margin: 0 20px;
+}
+header .nav a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Main */
+main {
+    height: 900px;;
+}
+
+/* home */
+main h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300px;
+    font-size: 20px;
+}
+.jumbo {
+    width: 100%;
+}
+.jumbo img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Dresses */
+.table {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.table tr {
+    height: 40px;
+}
+
+.table thead {
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+.table tbody {
+    text-align: center;
+}
+
+.table a {
+    text-decoration: none;
+}
+
+/* footer */
+ footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: lightgray;
+ }
+
+ footer .nav {
+    text-align: center;
+    line-height: 100px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+footer .nav li {
+    list-style: none;
+    display: inline;
+    margin: 0 20px;
+}
+footer .nav a {
+    text-decoration: none;
+    color: black;
+}  
+
+/* Hover - header */
+.nav a:hover {
+    color: grey;
+}
+
+/* Hover - dresses */
+.row-box .box:hover {
+    background-color: black;
+    color: white;
+}
