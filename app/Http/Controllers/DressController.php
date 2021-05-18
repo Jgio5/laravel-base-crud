@@ -16,10 +16,11 @@ class DressController extends Controller
     {   
         $vestiti = Dress::all();
 
-        $data = [
-            'vestiti' => $vestiti
-        ];
-        return view('dresses.index', $data);
+        //se vogliamo passare più dati
+        // $data = [
+        //     'vestiti' => $vestiti
+        // ];
+        return view('dresses.index', compact('vestiti'));
     }
 
     /**
@@ -29,7 +30,7 @@ class DressController extends Controller
      */
     public function create()
     {
-        //
+        return view('dresses.create');
     }
 
     /**
@@ -40,7 +41,21 @@ class DressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        
+        $new_dress = new Dress();
+
+        // $new_dress-> name = $data['name'];
+        // $new_dress-> color = $data['color'];
+        // $new_dress-> size = $data['size'];
+        // $new_dress-> description = $data['description'];
+        // $new_dress-> price = $data['price'];
+        // $new_dress-> season = $data['season'];
+
+        $new_dress->fill($data);
+        $new_dress->save();
+
+        return redirect()->route('vestiti.index');
     }
 
     /**
@@ -54,10 +69,10 @@ class DressController extends Controller
 
         if($id) {
             $vestito = Dress::find($id);
-            $data = [
-                'vestito' => $vestito
-            ];
-            return view('dresses.show', $data);
+            // $data = [
+            //     'vestito' => $vestito
+            // ];
+            return view('dresses.show',compact('vestito'));
         }
         abort(404);
     }

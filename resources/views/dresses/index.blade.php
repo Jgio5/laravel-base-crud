@@ -7,6 +7,7 @@
     <h1>Lista dei nostri vestiti</h1>
     
     <div class="container">
+
         <table class="table">
             <thead>
               <tr>
@@ -33,6 +34,10 @@
                 @endforeach
             </tbody>
           </table>
+
+          <div class="button">
+            <a href="{{ route('vestiti.create')}}" class="btn btn-create">Inserisci un nuovo vestito</a>
+          </div>
     </div>
     
 @endsection

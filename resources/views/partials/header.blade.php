@@ -3,7 +3,7 @@
         <div class="top-header">
             <div class="logo">
                 <a href="{{ route('pagina-home')}}">
-                    <img src="img/logo-nike.jpg" alt="Logo nike">
+                    <img src="/img/logo-nike.jpg" alt="Logo nike">
                 </a>
             </div>
     

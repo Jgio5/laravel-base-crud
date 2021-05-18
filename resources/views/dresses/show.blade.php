@@ -3,8 +3,10 @@
 @section('title', 'Dettagli vestito')
 
 @section('content')
+
+    <h1>Dettaglio del singolo vestito:</h1>
+    
     <div class="container">
-        <h1>Dettaglio del singolo vestito:</h1>
         <p>Prezzo: {{ $vestito['price']}} euro.</p>
         <p>Stagione: {{ $vestito['season']}}.</p>
     </div>

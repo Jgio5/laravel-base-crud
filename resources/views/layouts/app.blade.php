@@ -8,7 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
     {{-- Css --}}
-    <link rel="stylesheet" href="{{ asset ('css/style.css') }}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    {{-- Css partial --}}
+    @yield('css')
+
     <title>@yield('title', 'Nike') | Nike Store</title>
 </head>
 <body>
