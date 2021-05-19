@@ -20,10 +20,20 @@ a {
 }
 
 .btn {
-    padding: 2px 5px;
+    padding: 5px 7px;
     border-radius: 5px;
-    background-color: lightgray;
-    color:black;
+    color: black;
+}
+
+.btn-det {
+    background-color: rgb(42, 211, 42);
+}
+
+.btn-mod {
+    background-color: rgb(255, 255, 131);
+}
+.btn-delete {
+    background-color: rgb(248, 73, 73);
 }
 
 /* header */
@@ -122,6 +132,15 @@ main h1 {
     border-radius: 5px;
     height: 25px;
     border: 1px solid grey;
+}
+
+/* Validation */
+.alert {
+    background-color: lightgray;
+    color: red;
+    border-radius: 5px;
+    padding: 30px;
+    margin-bottom: 20px;
 }
 
 /* footer */

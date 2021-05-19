@@ -43,6 +43,17 @@ class DressController extends Controller
     {
         $data = $request->all();
         
+
+        $request->validate([
+            'name' => 'required|unique:dresses|max:255',
+            'color' => 'required|max:20',
+            'size' =>'required|max:4',
+            'description' =>'required',
+            'price' => 'required|numeric',
+            'season' => 'required'
+        ]);
+
+
         $new_dress = new Dress();
 
         // $new_dress-> name = $data['name'];
@@ -64,15 +75,15 @@ class DressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Dress $vestiti)
     {
 
-        if($id) {
-            $vestito = Dress::find($id);
+        if($vestiti) {
+            // $vestito = Dress::find($id);
             // $data = [
             //     'vestito' => $vestito
             // ];
-            return view('dresses.show',compact('vestito'));
+            return view('dresses.show',compact('vestiti'));
         }
         abort(404);
     }
@@ -83,9 +94,11 @@ class DressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Dress $vestiti)
     {
-        //
+        // $dress_to_update = Dress::findOrFail($id);
+        // return $id;
+        return view('dresses.edit', compact('vestiti'));
     }
 
     /**
@@ -95,9 +108,12 @@ class DressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Dress $vestiti)
     {
         //
+        $data = $request->all();
+        $vestiti->update($data);
+        return redirect()->route('vestiti.index');
     }
 
     /**
@@ -106,8 +122,10 @@ class DressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Dress $vestiti)
     {
         //
+        $vestiti->delete();
+        return redirect()->route('vestiti.index');
     }
 }
